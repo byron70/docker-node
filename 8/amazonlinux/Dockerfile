@@ -1,6 +1,7 @@
 FROM amazonlinux
 
 RUN yum install shadow-utils.x86_64 xz -y -q
+RUN yum groupinstall 'Development Tools' -y -q
 
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
